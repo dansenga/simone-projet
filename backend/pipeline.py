@@ -36,11 +36,15 @@ def audio_to_translated_text(audio_path: str, source_lang: str | None, target_la
     original_text = trans_res.get("text", "")
     detected_source = trans_res.get("language") or source_lang
 
-    try:
-        translated_text = translate_text(original_text, detected_source, target_lang)
-    except Exception:
-        logging.exception("Echec de la traduction de %s vers %s", detected_source, target_lang)
-        raise
+    # Si la langue détectée est déjà la langue cible, on peut sauter la traduction
+    if detected_source and detected_source == target_lang:
+        translated_text = original_text
+    else:
+        try:
+            translated_text = translate_text(original_text, detected_source, target_lang)
+        except Exception:
+            logging.exception("Echec de la traduction de %s vers %s", detected_source, target_lang)
+            raise
 
     # Sauvegarder l'historique et exporter le texte (DOCX/PDF)
     try:
