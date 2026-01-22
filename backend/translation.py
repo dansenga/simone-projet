@@ -8,9 +8,9 @@ mis en cache par paire (source,target) pour éviter de recharger.
 
 import logging
 import os
-from typing import Dict, Tuple
+from typing import Dict, Tuple, Optional
 
-from transformers import MarianMTModel, MarianTokenizer
+from transformers import MarianMTModel, MarianTokenizer, AutoModelForSeq2SeqLM, AutoTokenizer
 
 # Temps de téléchargement raisonnable pour HF hub
 os.environ.setdefault("HF_HUB_DOWNLOAD_TIMEOUT", "120")
@@ -64,6 +64,46 @@ class Translator:
 
 
 
+class CustomTranslator:
+    """Wrapper pour un modèle de traduction personnalisé sauvegardé dans un dossier.
+
+    Le modèle est identifié uniquement par le chemin `model_dir` (par exemple un
+    modèle Marian finetuné et sauvegardé depuis Colab).
+    """
+
+    _cache: Dict[str, "CustomTranslator"] = {}
+
+    def __new__(cls, model_dir: str):
+        if model_dir in cls._cache:
+            return cls._cache[model_dir]
+        inst = super().__new__(cls)
+        cls._cache[model_dir] = inst
+        return inst
+
+    def __init__(self, model_dir: str):
+        if hasattr(self, "initialized") and self.initialized:
+            return
+        self.initialized = False
+        self.model_dir = model_dir
+        logging.info("Chargement du modèle de traduction personnalisé depuis %s", model_dir)
+        try:
+            # AutoModel/AutoTokenizer fonctionnent aussi bien avec un Marian finetuné
+            self.tokenizer = AutoTokenizer.from_pretrained(model_dir)
+            self.model = AutoModelForSeq2SeqLM.from_pretrained(model_dir)
+        except Exception:
+            logging.exception("Echec du chargement du modèle personnalisé %s", model_dir)
+            raise
+        self.initialized = True
+
+    def translate(self, text: str, max_length: int = 512) -> str:
+        if not text:
+            return ""
+        inputs = self.tokenizer(text, return_tensors="pt", truncation=True)
+        outputs = self.model.generate(**inputs, max_length=max_length, num_beams=4)
+        return self.tokenizer.decode(outputs[0], skip_special_tokens=True)
+
+
+
 def translate_text(text: str, source_lang: str, target_lang: str) -> str:
     """Fonction utilitaire utilisée par la pipeline.
 
@@ -74,4 +114,27 @@ def translate_text(text: str, source_lang: str, target_lang: str) -> str:
         return translator.translate(text)
     except Exception:
         logging.exception("La traduction a échoué pour %s -> %s", source_lang, target_lang)
+        raise
+
+
+def translate_text_custom(text: str, model_dir: Optional[str] = None, max_length: int = 512) -> str:
+    """Traduction via un modèle personnalisé sauvegardé dans un dossier.
+
+    - `model_dir` : chemin vers le dossier du modèle finetuné (tokenizer + poids).
+      Si non fourni, on lit la variable d'environnement `CUSTOM_TRANSLATION_MODEL_DIR`.
+    - Levée d'exception en cas d'échec.
+    """
+    if model_dir is None:
+        model_dir = os.getenv("CUSTOM_TRANSLATION_MODEL_DIR")
+
+    if not model_dir:
+        raise ValueError(
+            "Aucun chemin de modèle personnalisé fourni (argument model_dir ou env CUSTOM_TRANSLATION_MODEL_DIR)."
+        )
+
+    try:
+        translator = CustomTranslator(model_dir=model_dir)
+        return translator.translate(text, max_length=max_length)
+    except Exception:
+        logging.exception("La traduction personnalisée a échoué avec le modèle %s", model_dir)
         raise

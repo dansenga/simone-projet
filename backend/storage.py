@@ -1,6 +1,6 @@
 import sqlite3
 import os
-from typing import Optional, Dict
+from typing import Optional, Dict, Any, List
 
 DB_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'history.db')
 
@@ -72,3 +72,36 @@ def get_all(db_path: Optional[str] = None):
     rows = cur.fetchall()
     conn.close()
     return rows
+
+
+def get_by_id(record_id: int, db_path: Optional[str] = None) -> Optional[Dict[str, Any]]:
+    """Récupère un enregistrement unique par son identifiant.
+
+    Retourne un dict ou None si l'id n'existe pas.
+    """
+
+    path = db_path or DB_PATH
+    if not os.path.exists(path):
+        return None
+    conn = sqlite3.connect(path)
+    cur = conn.cursor()
+    cur.execute(
+        'SELECT id, audio_path, timestamp, detected_lang, original_text, translated_text, docx_path, pdf_path '
+        'FROM transcripts WHERE id = ?',
+        (record_id,),
+    )
+    row = cur.fetchone()
+    conn.close()
+    if row is None:
+        return None
+    id_, audio_path, timestamp, detected_lang, original_text, translated_text, docx_path, pdf_path = row
+    return {
+        "id": id_,
+        "audio_path": audio_path,
+        "timestamp": timestamp,
+        "detected_lang": detected_lang,
+        "original_text": original_text,
+        "translated_text": translated_text,
+        "docx_path": docx_path,
+        "pdf_path": pdf_path,
+    }

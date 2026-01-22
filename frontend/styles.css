@@ -1,0 +1,281 @@
+:root {
+  --bg-main: #f8fafc;
+  --bg-sidebar: #0f172a;
+  --bg-card: #ffffff;
+  --accent: #2563eb;
+  --accent-soft: #dbeafe;
+  --text-main: #0f172a;
+  --text-muted: #6b7280;
+  --border-soft: #e5e7eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+#app {
+  height: 100vh;
+  display: flex;
+}
+
+.screen {
+  width: 100%;
+  display: none;
+}
+
+.screen.active {
+  display: flex;
+}
+
+/* Écran de bienvenue */
+
+#welcome-screen {
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-card {
+  background: var(--bg-card);
+  padding: 3rem 4rem;
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.2);
+  text-align: center;
+}
+
+.welcome-card h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2.5rem;
+}
+
+.welcome-card p {
+  margin: 0 0 2rem;
+  color: var(--text-muted);
+}
+
+/* Dashboard */
+
+#dashboard {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+}
+
+.sidebar {
+  background: var(--bg-sidebar);
+  color: #e5e7eb;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-item {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.7rem 1rem;
+  text-align: left;
+  background: transparent;
+  color: #e5e7eb;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.nav-item:hover {
+  background: rgba(148, 163, 184, 0.25);
+}
+
+.nav-item.active {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.content {
+  padding: 1.5rem 2rem;
+  overflow-y: auto;
+}
+
+.tab {
+  display: none;
+}
+
+.tab.active {
+  display: block;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  background: var(--bg-card);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.btn {
+  border-radius: 999px;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.btn.secondary {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.status {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.history-list {
+  margin-top: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-soft);
+  background: #ffffff;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.history-item {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-soft);
+  cursor: pointer;
+}
+
+.history-item:hover {
+  background: var(--accent-soft);
+}
+
+.history-item:last-child {
+  border-bottom: none;
+}
+
+.history-item-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.history-item-meta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.history-detail {
+  margin-top: 1.5rem;
+  background: #ffffff;
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border-soft);
+}
+
+.history-detail.hidden {
+  display: none;
+}
+
+pre {
+  background: #f3f4f6;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  max-height: 200px;
+  overflow-y: auto;
+  font-size: 0.85rem;
+}
+
+.export-form,
+.custom-form {
+  margin-top: 1rem;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+label {
+  font-size: 0.9rem;
+}
+
+input[type="number"],
+select,
+textarea {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-soft);
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.result {
+  margin-top: 0.75rem;
+  background: #f9fafb;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  #dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav {
+    flex-direction: row;
+  }
+
+  .nav-item {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.6rem;
+  }
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>SIMONE - Tableau de bord</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Écran de bienvenue -->
+    <div id="welcome-screen" class="screen active">
+      <div class="welcome-card">
+        <h1>SIMONE</h1>
+        <p>Transcription & Traduction assistées par IA</p>
+        <button id="btn-start" class="btn primary">Commencer</button>
+      </div>
+    </div>
+
+    <!-- Tableau de bord principal -->
+    <div id="dashboard" class="screen">
+      <aside class="sidebar">
+        <div class="logo">SIMONE</div>
+        <nav class="nav">
+          <button class="nav-item active" data-tab="home">Accueil</button>
+          <button class="nav-item" data-tab="history">Historique</button>
+          <button class="nav-item" data-tab="export">Exportation</button>
+          <button class="nav-item" data-tab="custom">Mon modèle</button>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <!-- Onglet Accueil -->
+        <section id="tab-home" class="tab active">
+          <h2>Accueil</h2>
+          <p>Choisissez un mode pour commencer :</p>
+          <div class="cards">
+            <div class="card">
+              <h3>Importer un audio</h3>
+              <p>Sélectionnez un fichier audio existant pour le transcrire et le traduire.</p>
+              <input type="file" id="file-input" accept="audio/*" />
+              <button id="btn-upload" class="btn secondary">Envoyer &amp; traiter</button>
+              <div id="upload-status" class="status"></div>
+            </div>
+            <div class="card">
+              <h3>Enregistrement en temps réel</h3>
+              <p>Enregistrez votre voix directement et obtenez une transcription.</p>
+              <button id="btn-mic" class="btn secondary" disabled>TBD (géré côté app locale)</button>
+              <small>Le temps réel reste géré par l'application locale (mode CLI).</small>
+            </div>
+          </div>
+        </section>
+
+        <!-- Onglet Historique -->
+        <section id="tab-history" class="tab">
+          <h2>Historique</h2>
+          <div id="history-list" class="history-list"></div>
+          <div id="history-detail" class="history-detail hidden">
+            <h3>Détail</h3>
+            <p><strong>Audio :</strong> <span id="detail-audio-path"></span></p>
+            <p><strong>Date :</strong> <span id="detail-timestamp"></span></p>
+            <p><strong>Langue détectée :</strong> <span id="detail-lang"></span></p>
+            <h4>Texte original</h4>
+            <pre id="detail-original"></pre>
+            <h4>Texte traduit</h4>
+            <pre id="detail-translated"></pre>
+            <button id="btn-go-export" class="btn primary">Exporter ce résultat</button>
+          </div>
+        </section>
+
+        <!-- Onglet Exportation -->
+        <section id="tab-export" class="tab">
+          <h2>Exportation</h2>
+          <p>Sélectionnez un enregistrement puis choisissez le format à générer.</p>
+          <div class="export-form">
+            <label for="export-record-id">ID de l'enregistrement :</label>
+            <input type="number" id="export-record-id" min="1" />
+
+            <label for="export-format">Format :</label>
+            <select id="export-format">
+              <option value="pdf">PDF</option>
+              <option value="docx">Word (DOCX)</option>
+            </select>
+
+            <button id="btn-export" class="btn primary">Générer / Télécharger</button>
+          </div>
+          <div id="export-status" class="status"></div>
+        </section>
+
+        <!-- Onglet Mon modèle -->
+        <section id="tab-custom" class="tab">
+          <h2>Mon modèle</h2>
+          <p>Tester ton modèle de traduction personnalisé (finetuné).</p>
+          <div class="custom-form">
+            <label for="custom-text">Texte à traduire :</label>
+            <textarea id="custom-text" rows="4" placeholder="Entrez un texte..."></textarea>
+            <button id="btn-custom-translate" class="btn primary">Traduire avec mon modèle</button>
+            <div id="custom-result" class="result"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
