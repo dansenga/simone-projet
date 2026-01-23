@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMONE - Présentation du Projet</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Barre de Progression -->
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-controls">
+        <button class="nav-btn" id="prevBtn" title="Précédent">
+            <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <span class="slide-counter">
+            <span id="currentSlide">1</span> / <span id="totalSlides">12</span>
+        </span>
+        <button class="nav-btn" id="nextBtn" title="Suivant">
+            <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+    </nav>
+
+    <!-- Menu des slides -->
+    <button class="menu-toggle" id="menuToggle" title="Menu">
+        <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <h3>📑 Sommaire</h3>
+            <button class="close-menu" id="closeMenu">×</button>
+        </div>
+        <ul class="menu-list" id="menuList">
+            <!-- Généré par JS -->
+        </ul>
+    </div>
+
+    <!-- Container des Slides -->
+    <div class="slides-container" id="slidesContainer">
+        
+        <!-- ==================== SLIDE 1: Titre ==================== -->
+        <section class="slide slide-title active" data-slide="1" data-title="Accueil">
+            <div class="slide-content">
+                <div class="title-decoration">
+                    <div class="floating-icon">🎙️</div>
+                    <div class="floating-icon">🌍</div>
+                    <div class="floating-icon">🤖</div>
+                </div>
+                <div class="logo-container animate-fade-up">
+                    <span class="logo-emoji">🎤</span>
+                    <h1 class="main-title">SIMONE</h1>
+                    <p class="version-badge">v2.0</p>
+                </div>
+                
+                <p class="tagline animate-fade-up delay-2">
+                    🚀 Application de Traduction Vocale en Temps Réel avec Intelligence Artificielle
+                </p>
+                <div class="author-info animate-fade-up delay-3">
+                    <p>📅 Janvier 2026</p>
+                    <p>🎓 Projet Académique & Professionnel</p>
+                </div>
+                <div class="scroll-indicator animate-bounce">
+                    <span>Appuyez sur → ou cliquez pour continuer</span>
+                    <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                </div>
+            </div>
+            <div class="slide-bg-pattern"></div>
+        </section>
+
+        <!-- ==================== SLIDE 2: Problématique ==================== -->
+        <section class="slide slide-problem" data-slide="2" data-title="Problématique">
+            <div class="slide-content">
+                <h2 class="slide-title animate-fade-up">
+                    <span class="title-icon">🤔</span>
+                    Problématique
+                </h2>
+                <div class="problem-grid">
+                    <div class="problem-card animate-fade-left delay-1">
+                        <div class="card-icon">🌐</div>
+                        <h3>Barrière Linguistique</h3>
+                        <p>7 000+ langues dans le monde créent des obstacles à la communication internationale</p>
+                    </div>
+                    <div class="problem-card animate-fade-right delay-2">
+                        <div class="card-icon">⏱️</div>
+                        <h3>Lenteur des Solutions</h3>
+                        <p>Les outils existants nécessitent souvent de taper le texte manuellement</p>
+                    </div>
+                    <div class="problem-card animate-fade-left delay-3">
+                        <div class="card-icon">💰</div>
+                        <h3>Coût Élevé</h3>
+                        <p>Les interprètes professionnels sont coûteux et pas toujours disponibles</p>
+                    </div>
+                    <div class="problem-card animate-fade-right delay-4">
+                        <div class="card-icon">📱</div>
+                        <h3>Accessibilité</h3>
+                        <p>Besoin d'une solution simple, rapide et accessible à tous</p>
+                    </div>
+                </div>
+                <div class="question-box animate-fade-up delay-5">
+                    <p>💡 <strong>Comment</strong> permettre une communication multilingue instantanée et naturelle ?</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SLIDE 3: Solution ==================== -->
+        <section class="slide slide-solution" data-slide="3" data-title="Notre Solution">
+            <div class="slide-content">
+                <h2 class="slide-title animate-fade-up">
+                    <span class="title-icon">✨</span>
+                    Notre Solution : SIMONE
+                </h2>
+                <div class="solution-showcase">
+                    <div class="solution-demo animate-scale-up delay-1">
+                        <div class="demo-phone">
+                            <div class="phone-screen">
+                                <div class="demo-step step-1">
+                                    <span class="step-icon">🎤</span>
+                                    <span class="step-text">Parler</span>
+                                </div>
+                                <div class="demo-arrow">→</div>
+                                <div class="demo-step step-2">
+                                    <span class="step-icon">📝</span>
+                                    <span class="step-text">Transcrire</span>
+                                </div>
+                                <div class="demo-arrow">→</div>
+                                <div class="demo-step step-3">
+                                    <span class="step-icon">🌍</span>
+                                    <span class="step-text">Traduire</span>
+                                </div>
+                                <div class="demo-arrow">→</div>
+                                <div class="demo-step step-4">
+                                    <span class="step-icon">🔊</span>
+                                    <span class="step-text">Écouter</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="solution-features animate-fade-left delay-2">
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>Traduction vocale en temps réel</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>Interface web intuitive</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>Gratuit et open source</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>6 langues supportées</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>Synthèse vocale intégrée</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SLIDE 4: Fonctionnalités ==================== -->
+        <section class="slide slide-features" data-slide="4" data-title="Fonctionnalités">
+            <div class="slide-content">
+                <h2 class="slide-title animate-fade-up">
+                    <span class="title-icon">🎯</span>
+                    Fonctionnalités Principales
+                </h2>
+                <div class="features-grid">
+                    <div class="feature-card animate-fade-up delay-1">
+                        <div class="feature-icon-large">🎤</div>
+                        <h3>Capture Vocale</h3>
+                        <p>Enregistrement audio directement depuis le navigateur avec Web Audio API</p>
+                    </div>
+                    <div class="feature-card animate-fade-up delay-2">
+                        <div class="feature-icon-large">📝</div>
+                        <h3>Transcription IA</h3>
+                        <p>Conversion parole-texte avec OpenAI Whisper (99 langues)</p>
+                    </div>
+                    <div class="feature-card animate-fade-up delay-3">
+                        <div class="feature-icon-large">🌍</div>
+                        <h3>Traduction Neuronale</h3>
+                        <p>Traduction automatique avec Helsinki-NLP Marian</p>
+                    </div>
+                    <div class="feature-card animate-fade-up delay-4">
+                        <div class="feature-icon-large">🔊</div>
+                        <h3>Synthèse Vocale</h3>
+                        <p>Lecture audio de la traduction (Text-to-Speech)</p>
+                    </div>
+                    <div class="feature-card animate-fade-up delay-5">
+                        <div class="feature-icon-large">⚡</div>
+                        <h3>Temps Réel</h3>
+                        <p>Communication WebSocket pour des résultats instantanés</p>
+                    </div>
+                    <div class="feature-card animate-fade-up delay-6">
+                        <div class="feature-icon-large">📄</div>
+                        <h3>Export</h3>
+                        <p>Sauvegarde en PDF ou DOCX + Historique</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SLIDE 5: Architecture ==================== -->
+        <section class="slide slide-architecture" data-slide="5" data-title="Architecture">
+            <div class="slide-content">
+                <h2 class="slide-title animate-fade-up">
+                    <span class="title-icon">🏗️</span>
+                    Architecture Technique
+                </h2>
+                <div class="architecture-diagram animate-fade-up delay-1">
+                    <div class="arch-layer client-layer">
+                        <div class="layer-title">🖥️ Client (Navigateur)</div>
+                        <div class="layer-items">
+                            <div class="arch-item">HTML5</div>
+                            <div class="arch-item">CSS3</div>
+                            <div class="arch-item">JavaScript</div>
+                            <div class="arch-item">Web Audio API</div>
+                            <div class="arch-item">WebSocket</div>
+                        </div>
+                    </div>
+                    <div class="arch-arrow">
+                        <div class="arrow-line"></div>
+                        <span>HTTP / WebSocket</span>
+                    </div>
+                    <div class="arch-layer server-layer">
+                        <div class="layer-title">⚙️ Serveur (Python)</div>
+                        <div class="layer-items">
+                            <div class="arch-item">FastAPI</div>
+                            <div class="arch-item">Uvicorn</div>
+                            <div class="arch-item">SQLite</div>
+                        </div>
+                    </div>
+                    <div class="arch-arrow">
+                        <div class="arrow-line"></div>
+                        <span>Inference</span>
+                    </div>
+                    <div class="arch-layer ai-layer">
+                        <div class="layer-title">🤖 Modèles IA</div>
+                        <div class="layer-items">
+                            <div class="arch-item">Whisper (ASR)</div>
+                            <div class="arch-item">Marian (NMT)</div>
+                            <div class="arch-item">PyTorch</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SLIDE 6: Technologies ==================== -->
+        <section class="slide slide-tech" data-slide="6" data-title="Technologies">
+            <div class="slide-content">
+                <h2 class="slide-title animate-fade-up">
+                    <span class="title-icon">🛠️</span>
+                    Technologies Utilisées
+                </h2>
+                <div class="tech-grid">
+                    <div class="tech-category animate-fade-up delay-1">
+                        <h3>🐍 Backend</h3>
+                        <div class="tech-items">
+                            <div class="tech-item">
+                                <span class="tech-logo">🚀</span>
+                                <span class="tech-name">FastAPI</span>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-logo">🔥</span>
+                                <span class="tech-name">PyTorch</span>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-logo">🤗</span>
+                                <span class="tech-name">Transformers</span>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-logo">🗄️</span>
+                                <span class="tech-name">SQLite</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-category animate-fade-up delay-2">
+                        <h3>🎨 Frontend</h3>
+                        <div class="tech-items">
+                            <div class="tech-item">
+                                <span class="tech-logo">📄</span>
+                                <span class="tech-name">HTML5</span>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-logo">🎨</span>
+                                <span class="tech-name">CSS3</span>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-logo">⚡</span>
+                                <span class="tech-name">JavaScript</span>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-logo">🔌</span>
+                                <span class="tech-name">WebSocket</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-category animate-fade-up delay-3">
+                        <h3>🤖 Intelligence Artificielle</h3>
+                        <div class="tech-items">
+                            <div class="tech-item highlight">
+                                <span class="tech-logo">🎤</span>
+                                <span class="tech-name">OpenAI Whisper</span>
+                                <span class="tech-desc">Reconnaissance vocale</span>
+                            </div>
+                            <div class="tech-item highlight">
+                                <span class="tech-logo">🌍</span>
+                                <span class="tech-name">Helsinki-NLP Marian</span>
+                                <span class="tech-desc">Traduction neuronale</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SLIDE 7: Whisper ==================== -->
+        <section class="slide slide-whisper" data-slide="7" data-title="Whisper (ASR)">
+            <div class="slide-content">
+                <h2 class="slide-title animate-fade-up">
+                    <span class="title-icon">🎤</span>
+                    OpenAI Whisper
+                </h2>
+                <div class="model-showcase">
+                    <div class="model-info animate-fade-left delay-1">
+                        <div class="model-badge">Automatic Speech Recognition</div>
+                        <h3>Qu'est-ce que Whisper ?</h3>
+                        <p>Whisper est un modèle de reconnaissance vocale développé par <strong>OpenAI</strong>. Il peut transcrire de l'audio en texte avec une précision remarquable.</p>
+                        <div class="model-stats">
+                            <div class="stat">
+                                <span class="stat-value">99</span>
+                                <span class="stat-label">Langues</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">680k</span>
+                                <span class="stat-label">Heures d'entraînement</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">5</span>
+                                <span class="stat-label">Tailles de modèle</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="model-diagram animate-fade-right delay-2">
+                        <div class="diagram-box">
+                            <div class="diagram-input">
+                                <span class="icon">🎵</span>
+                                <span>Audio</span>
+                            </div>
+                            <div class="diagram-arrow">→</div>
+                            <div class="diagram-process">
+                                <span class="icon">🧠</span>
+                                <span>Whisper</span>
+                            </div>
+                            <div class="diagram-arrow">→</div>
+                            <div class="diagram-output">
+                                <span class="icon">📝</span>
+                                <span>Texte</span>
+                            </div>
+                        </div>
+                        <div class="code-preview">
+                            <pre><code>result = whisper.transcribe(audio)
+print(result["text"])
+# "Bonjour, comment allez-vous ?"</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SLIDE 8: Marian ==================== -->
+        <section class="slide slide-marian" data-slide="8" data-title="Marian (NMT)">
+            <div class="slide-content">
+                <h2 class="slide-title animate-fade-up">
+                    <span class="title-icon">🌍</span>
+                    Helsinki-NLP Marian
+                </h2>
+                <div class="model-showcase">
+                    <div class="model-info animate-fade-left delay-1">
+                        <div class="model-badge">Neural Machine Translation</div>
+                        <h3>Qu'est-ce que Marian ?</h3>
+                        <p>Marian est une famille de modèles de traduction neuronale développée par <strong>Helsinki-NLP</strong>. Basée sur l'architecture Transformer.</p>
+                        <div class="languages-grid">
+                            <div class="lang-item">🇫🇷 Français</div>
+                            <div class="lang-item">🇬🇧 English</div>
+                            <div class="lang-item">🇪🇸 Español</div>
+                            <div class="lang-item">🇩🇪 Deutsch</div>
+                            <div class="lang-item">🇮🇹 Italiano</div>
+                            <div class="lang-item">🇵🇹 Português</div>
+                        </div>
+                    </div>
+                    <div class="model-diagram animate-fade-right delay-2">
+                        <div class="translation-example">
+                            <div class="translation-input">
+                                <span class="flag">🇫🇷</span>
+                                <span class="text">"Bonjour le monde"</span>
+                            </div>
+                            <div class="translation-arrow">
+                                <span class="arrow-icon">⟶</span>
+                                <span class="arrow-label">Marian NMT</span>
+                            </div>
+                            <div class="translation-output">
+                                <span class="flag">🇬🇧</span>
+                                <span class="text">"Hello world"</span>
+                            </div>
+                        </div>
+                        <div class="code-preview">
+                            <pre><code>from transformers import MarianMTModel
+model = "Helsinki-NLP/opus-mt-fr-en"
+# Traduction FR → EN</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SLIDE 9: Démonstration ==================== -->
+        <section class="slide slide-demo" data-slide="9" data-title="Démonstration">
+            <div class="slide-content">
+                <h2 class="slide-title animate-fade-up">
+                    <span class="title-icon">🖥️</span>
+                    Démonstration de l'Interface
+                </h2>
+                <div class="demo-container animate-scale-up delay-1">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <div class="browser-url">localhost:8000</div>
+                        </div>
+                        <div class="browser-content">
+                            <div class="demo-interface">
+                                <div class="demo-header">
+                                    <span class="demo-logo">🎤 SIMONE</span>
+                                </div>
+                                <div class="demo-selectors">
+                                    <div class="demo-select">
+                                        <span>🇫🇷 Français</span>
+                                    </div>
+                                    <span class="demo-swap">⟷</span>
+                                    <div class="demo-select">
+                                        <span>🇬🇧 English</span>
+                                    </div>
+                                </div>
+                                <div class="demo-panels">
+                                    <div class="demo-panel">
+                                        <div class="panel-title">🎤 Votre voix</div>
+                                        <div class="panel-text">Bonjour, je m'appelle Marie et je suis développeuse.</div>
+                                    </div>
+                                    <div class="demo-mic-btn">
+                                        <span>🎙️</span>
+                                    </div>
+                                    <div class="demo-panel">
+                                        <div class="panel-title">🌍 Traduction</div>
+                                        <div class="panel-text">Hello, my name is Marie and I am a developer.</div>
+                                    </div>
+                                </div>
+                                <div class="demo-actions">
+                                    <button class="demo-action-btn">🔊 Écouter</button>
+                                    <button class="demo-action-btn">📋 Copier</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SLIDE 10: Flux de Données ==================== -->
+        <section class="slide slide-flow" data-slide="10" data-title="Flux de Données">
+            <div class="slide-content">
+                <h2 class="slide-title animate-fade-up">
+                    <span class="title-icon">🔄</span>
+                    Flux de Données
+                </h2>
+                <div class="flow-diagram animate-fade-up delay-1">
+                    <div class="flow-step">
+                        <div class="flow-icon">👤</div>
+                        <div class="flow-label">Utilisateur</div>
+                        <div class="flow-desc">Parle en français</div>
+                    </div>
+                    <div class="flow-connector">
+                        <div class="connector-line"></div>
+                        <span>Audio</span>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-icon">🎤</div>
+                        <div class="flow-label">Microphone</div>
+                        <div class="flow-desc">Web Audio API</div>
+                    </div>
+                    <div class="flow-connector">
+                        <div class="connector-line"></div>
+                        <span>PCM 16kHz</span>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-icon">🔌</div>
+                        <div class="flow-label">WebSocket</div>
+                        <div class="flow-desc">Base64</div>
+                    </div>
+                    <div class="flow-connector">
+                        <div class="connector-line"></div>
+                        <span>Streaming</span>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-icon">🧠</div>
+                        <div class="flow-label">Whisper</div>
+                        <div class="flow-desc">Transcription</div>
+                    </div>
+                    <div class="flow-connector">
+                        <div class="connector-line"></div>
+                        <span>Texte</span>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-icon">🌍</div>
+                        <div class="flow-label">Marian</div>
+                        <div class="flow-desc">Traduction</div>
+                    </div>
+                    <div class="flow-connector">
+                        <div class="connector-line"></div>
+                        <span>JSON</span>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-icon">📱</div>
+                        <div class="flow-label">Interface</div>
+                        <div class="flow-desc">Affichage + TTS</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SLIDE 11: Perspectives ==================== -->
+        <section class="slide slide-future" data-slide="11" data-title="Perspectives">
+            <div class="slide-content">
+                <h2 class="slide-title animate-fade-up">
+                    <span class="title-icon">🚀</span>
+                    Perspectives d'Évolution
+                </h2>
+                <div class="timeline animate-fade-up delay-1">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Court Terme</h3>
+                            <ul>
+                                <li>🔄 Traduction en streaming continu</li>
+                                <li>🌐 Support de plus de langues</li>
+                                <li>🎯 Détection automatique de la langue</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Moyen Terme</h3>
+                            <ul>
+                                <li>💬 Mode conversation bilingue</li>
+                                <li>📱 Application mobile (PWA)</li>
+                                <li>☁️ Déploiement cloud (Docker)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Long Terme</h3>
+                            <ul>
+                                <li>🎥 Traduction vidéo en temps réel</li>
+                                <li>🤝 Intégration visioconférence</li>
+                                <li>🧠 Fine-tuning domaine spécifique</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SLIDE 12: Conclusion ==================== -->
+        <section class="slide slide-conclusion" data-slide="12" data-title="Conclusion">
+            <div class="slide-content">
+                <h2 class="slide-title animate-fade-up">
+                    <span class="title-icon">🎯</span>
+                    Conclusion
+                </h2>
+                <div class="conclusion-content">
+                    <div class="recap-cards animate-fade-up delay-1">
+                        <div class="recap-card">
+                            <span class="recap-icon">✅</span>
+                            <p>Solution complète de traduction vocale</p>
+                        </div>
+                        <div class="recap-card">
+                            <span class="recap-icon">✅</span>
+                            <p>Technologies IA de pointe (Whisper + Marian)</p>
+                        </div>
+                        <div class="recap-card">
+                            <span class="recap-icon">✅</span>
+                            <p>Architecture moderne et extensible</p>
+                        </div>
+                        <div class="recap-card">
+                            <span class="recap-icon">✅</span>
+                            <p>Interface utilisateur intuitive</p>
+                        </div>
+                    </div>
+                    <div class="thank-you animate-scale-up delay-2">
+                        <div class="thanks-icon">🙏</div>
+                        <h3>Merci de votre attention !</h3>
+                        <p>Des questions ?</p>
+                    </div>
+                    <div class="contact-info animate-fade-up delay-3">
+                        <p>📧 Contact : projet@simone.ai</p>
+                        <p>🔗 GitHub : github.com/simone-project</p>
+                    </div>
+                </div>
+            </div>
+            <div class="confetti-container" id="confetti"></div>
+        </section>
+
+    </div>
+
+    <!-- Indicateurs de slides -->
+    <div class="slide-indicators" id="slideIndicators">
+        <!-- Généré par JS -->
+    </div>
+
+    <!-- Instructions clavier -->
+    <div class="keyboard-hints">
+        <span>← →</span> Navigation
+        <span>F</span> Plein écran
+        <span>M</span> Menu
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
