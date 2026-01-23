@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMONE - Traduction Vocale IA en Temps Réel</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎤</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="landing.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-icon">🎤</span>
+                <span class="logo-text">SIMONE</span>
+            </a>
+            <div class="nav-menu" id="navMenu">
+                <a href="#features" class="nav-link">Fonctionnalités</a>
+                <a href="#how-it-works" class="nav-link">Comment ça marche</a>
+                <a href="#tech" class="nav-link">Technologies</a>
+                <a href="#demo" class="nav-link">Démo</a>
+            </div>
+            <div class="nav-actions">
+                <a href="index.html" class="btn btn-primary">
+                    <span>Lancer l'App</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <div class="hero-pattern"></div>
+            <div class="floating-elements">
+                <div class="float-item float-1">🎤</div>
+                <div class="float-item float-2">🌍</div>
+                <div class="float-item float-3">🤖</div>
+                <div class="float-item float-4">💬</div>
+                <div class="float-item float-5">🔊</div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge animate-fade-down">
+                <span class="badge-icon">✨</span>
+                <span>Propulsé par l'Intelligence Artificielle</span>
+            </div>
+            <h1 class="hero-title animate-fade-up">
+                Traduisez votre voix<br>
+                <span class="gradient-text">en temps réel</span>
+            </h1>
+            <p class="hero-subtitle animate-fade-up delay-1">
+                SIMONE utilise l'IA de pointe pour transcrire et traduire instantanément 
+                vos paroles dans 6 langues. Simple, rapide et précis.
+            </p>
+            <div class="hero-actions animate-fade-up delay-2">
+                <a href="index.html" class="btn btn-hero-primary">
+                    <span class="btn-icon">🚀</span>
+                    <span>Commencer Maintenant</span>
+                </a>
+                <a href="#demo" class="btn btn-hero-secondary">
+                    <span class="btn-icon">▶️</span>
+                    <span>Voir la Démo</span>
+                </a>
+            </div>
+            <div class="hero-stats animate-fade-up delay-3">
+                <div class="stat-item">
+                    <span class="stat-value">6</span>
+                    <span class="stat-label">Langues</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-value">&lt;2s</span>
+                    <span class="stat-label">Latence</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-value">99%</span>
+                    <span class="stat-label">Précision</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual animate-scale-up delay-2">
+            <div class="app-preview">
+                <div class="preview-header">
+                    <div class="preview-dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <span class="preview-title">SIMONE v2.0</span>
+                </div>
+                <div class="preview-content">
+                    <div class="preview-langs">
+                        <div class="lang-badge">🇫🇷 Français</div>
+                        <span class="lang-arrow">→</span>
+                        <div class="lang-badge">🇬🇧 English</div>
+                    </div>
+                    <div class="preview-mic">
+                        <div class="mic-circle">
+                            <span>🎤</span>
+                        </div>
+                        <div class="mic-waves">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <div class="preview-result">
+                        <div class="result-box source">
+                            <small>Transcription</small>
+                            <p>"Bonjour, bienvenue sur SIMONE"</p>
+                        </div>
+                        <div class="result-box target">
+                            <small>Traduction</small>
+                            <p>"Hello, welcome to SIMONE"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Découvrir</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Brands/Tech Banner -->
+    <section class="brands-section">
+        <div class="container">
+            <p class="brands-title">Propulsé par les meilleures technologies</p>
+            <div class="brands-grid">
+                <div class="brand-item">
+                    <span class="brand-logo">🔥</span>
+                    <span class="brand-name">PyTorch</span>
+                </div>
+                <div class="brand-item">
+                    <span class="brand-logo">🤗</span>
+                    <span class="brand-name">Hugging Face</span>
+                </div>
+                <div class="brand-item">
+                    <span class="brand-logo">🎤</span>
+                    <span class="brand-name">Whisper</span>
+                </div>
+                <div class="brand-item">
+                    <span class="brand-logo">⚡</span>
+                    <span class="brand-name">FastAPI</span>
+                </div>
+                <div class="brand-item">
+                    <span class="brand-logo">🔌</span>
+                    <span class="brand-name">WebSocket</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Fonctionnalités</span>
+                <h2 class="section-title">Tout ce dont vous avez besoin</h2>
+                <p class="section-subtitle">Une solution complète pour briser les barrières linguistiques</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <span>🎤</span>
+                    </div>
+                    <h3>Capture Vocale</h3>
+                    <p>Enregistrez votre voix directement depuis le navigateur. Pas d'installation requise.</p>
+                </div>
+                <div class="feature-card featured">
+                    <div class="feature-icon">
+                        <span>🧠</span>
+                    </div>
+                    <h3>IA Avancée</h3>
+                    <p>OpenAI Whisper pour une transcription ultra-précise en 99 langues.</p>
+                    <span class="feature-badge">Nouveauté</span>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <span>🌍</span>
+                    </div>
+                    <h3>Multilingue</h3>
+                    <p>Traduisez entre Français, Anglais, Espagnol, Allemand, Italien et Portugais.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <span>⚡</span>
+                    </div>
+                    <h3>Temps Réel</h3>
+                    <p>Résultats instantanés grâce à la technologie WebSocket.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <span>🔊</span>
+                    </div>
+                    <h3>Synthèse Vocale</h3>
+                    <p>Écoutez la traduction avec une voix naturelle (Text-to-Speech).</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <span>📄</span>
+                    </div>
+                    <h3>Export & Historique</h3>
+                    <p>Sauvegardez vos traductions en PDF/DOCX. Historique complet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works -->
+    <section class="how-section" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Comment ça marche</span>
+                <h2 class="section-title">Simple comme 1, 2, 3</h2>
+                <p class="section-subtitle">Traduisez votre voix en quelques secondes</p>
+            </div>
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-visual">
+                        <div class="step-icon">🎤</div>
+                    </div>
+                    <h3>Parlez</h3>
+                    <p>Cliquez sur le microphone et parlez dans votre langue</p>
+                </div>
+                <div class="step-connector">
+                    <svg viewBox="0 0 100 20">
+                        <path d="M0 10 Q50 10 100 10" stroke="url(#gradient)" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+                        <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#6366F1"/>
+                                <stop offset="100%" style="stop-color:#8B5CF6"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-visual">
+                        <div class="step-icon">🤖</div>
+                    </div>
+                    <h3>L'IA Analyse</h3>
+                    <p>Whisper transcrit, Marian traduit en temps réel</p>
+                </div>
+                <div class="step-connector">
+                    <svg viewBox="0 0 100 20">
+                        <path d="M0 10 Q50 10 100 10" stroke="url(#gradient2)" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+                        <defs>
+                            <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#8B5CF6"/>
+                                <stop offset="100%" style="stop-color:#10B981"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-visual">
+                        <div class="step-icon">🌍</div>
+                    </div>
+                    <h3>Lisez & Écoutez</h3>
+                    <p>Obtenez la traduction texte et audio instantanément</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section class="languages-section">
+        <div class="container">
+            <div class="section-header light">
+                <span class="section-badge">Langues Supportées</span>
+                <h2 class="section-title">Communiquez sans frontières</h2>
+            </div>
+            <div class="languages-grid">
+                <div class="language-card">
+                    <span class="flag">🇫🇷</span>
+                    <span class="lang-name">Français</span>
+                </div>
+                <div class="language-card">
+                    <span class="flag">🇬🇧</span>
+                    <span class="lang-name">English</span>
+                </div>
+                <div class="language-card">
+                    <span class="flag">🇪🇸</span>
+                    <span class="lang-name">Español</span>
+                </div>
+                <div class="language-card">
+                    <span class="flag">🇩🇪</span>
+                    <span class="lang-name">Deutsch</span>
+                </div>
+                <div class="language-card">
+                    <span class="flag">🇮🇹</span>
+                    <span class="lang-name">Italiano</span>
+                </div>
+                <div class="language-card">
+                    <span class="flag">🇵🇹</span>
+                    <span class="lang-name">Português</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Section -->
+    <section class="tech-section" id="tech">
+        <div class="container">
+            <div class="tech-content">
+                <div class="tech-info">
+                    <span class="section-badge">Technologie</span>
+                    <h2 class="section-title">Propulsé par l'IA de pointe</h2>
+                    <p class="tech-description">
+                        SIMONE combine les modèles d'IA les plus avancés pour vous offrir 
+                        une expérience de traduction inégalée.
+                    </p>
+                    <div class="tech-list">
+                        <div class="tech-item">
+                            <div class="tech-icon">🎤</div>
+                            <div class="tech-details">
+                                <h4>OpenAI Whisper</h4>
+                                <p>Reconnaissance vocale multilingue avec 99 langues supportées</p>
+                            </div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon">🌍</div>
+                            <div class="tech-details">
+                                <h4>Helsinki-NLP Marian</h4>
+                                <p>Traduction neuronale de qualité professionnelle</p>
+                            </div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon">⚡</div>
+                            <div class="tech-details">
+                                <h4>FastAPI + WebSocket</h4>
+                                <p>Communication temps réel ultra-rapide</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-visual">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                            <span class="filename">simone.py</span>
+                        </div>
+                        <pre class="code-content"><code><span class="comment"># Transcription avec Whisper</span>
+<span class="keyword">result</span> = whisper.transcribe(audio)
+<span class="variable">text</span> = result[<span class="string">"text"</span>]
+
+<span class="comment"># Traduction avec Marian</span>
+<span class="keyword">translation</span> = marian.translate(
+    text, 
+    source=<span class="string">"fr"</span>, 
+    target=<span class="string">"en"</span>
+)
+
+<span class="comment"># Résultat instantané</span>
+<span class="function">print</span>(translation)
+<span class="output">"Hello, welcome to SIMONE"</span></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section class="demo-section" id="demo">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Démonstration</span>
+                <h2 class="section-title">Voyez SIMONE en action</h2>
+            </div>
+            <div class="demo-container">
+                <div class="demo-browser">
+                    <div class="browser-bar">
+                        <div class="browser-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="browser-url">
+                            <span class="url-icon">🔒</span>
+                            <span>localhost:8000</span>
+                        </div>
+                    </div>
+                    <div class="browser-content">
+                        <div class="demo-app">
+                            <div class="demo-header">
+                                <span class="demo-logo">🎤 SIMONE</span>
+                                <span class="demo-version">v2.0</span>
+                            </div>
+                            <div class="demo-body">
+                                <div class="demo-lang-select">
+                                    <select>
+                                        <option>🇫🇷 Français</option>
+                                    </select>
+                                    <button class="swap-btn">⇄</button>
+                                    <select>
+                                        <option>🇬🇧 English</option>
+                                    </select>
+                                </div>
+                                <div class="demo-panels">
+                                    <div class="demo-panel">
+                                        <div class="panel-label">🎤 Votre voix</div>
+                                        <div class="panel-text" id="demoSource">Cliquez pour démarrer...</div>
+                                    </div>
+                                    <div class="demo-mic-area">
+                                        <button class="demo-mic-btn" id="demoMic">
+                                            <span>🎙️</span>
+                                        </button>
+                                        <div class="demo-waves" id="demoWaves">
+                                            <span></span><span></span><span></span><span></span><span></span>
+                                        </div>
+                                    </div>
+                                    <div class="demo-panel">
+                                        <div class="panel-label">🌍 Traduction</div>
+                                        <div class="panel-text" id="demoTarget">La traduction apparaîtra ici...</div>
+                                    </div>
+                                </div>
+                                <div class="demo-actions">
+                                    <button class="demo-action">🔊 Écouter</button>
+                                    <button class="demo-action">📋 Copier</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Prêt à briser les barrières linguistiques ?</h2>
+                <p>Commencez à traduire votre voix en temps réel dès maintenant.</p>
+                <a href="index.html" class="btn btn-cta">
+                    <span>🚀 Lancer SIMONE</span>
+                </a>
+            </div>
+            <div class="cta-decoration">
+                <div class="cta-circle"></div>
+                <div class="cta-circle"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span>🎤</span>
+                        <span>SIMONE</span>
+                    </div>
+                    <p>Application de traduction vocale en temps réel propulsée par l'Intelligence Artificielle.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Produit</h4>
+                        <a href="#features">Fonctionnalités</a>
+                        <a href="#how-it-works">Comment ça marche</a>
+                        <a href="#demo">Démo</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Ressources</h4>
+                        <a href="../DOCUMENTATION.md">Documentation</a>
+                        <a href="../Presentation/index.html">Présentation</a>
+                        <a href="https://github.com/dansenga/simone-projet">GitHub</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Technologies</h4>
+                        <a href="https://github.com/openai/whisper">Whisper</a>
+                        <a href="https://huggingface.co/Helsinki-NLP">Marian NMT</a>
+                        <a href="https://fastapi.tiangolo.com">FastAPI</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 SIMONE — Projet Académique & Professionnel</p>
+                <div class="footer-social">
+                    <a href="https://github.com/dansenga/simone-projet" class="social-link">
+                        <svg viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="landing.js"></script>
+</body>
+</html>

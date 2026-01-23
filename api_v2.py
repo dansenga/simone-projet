@@ -85,11 +85,24 @@ class HistoryItem(BaseModel):
 
 @app.get("/")
 async def root():
-    """Page principale - Interface de traduction en temps réel."""
+    """Page d'accueil - Landing page professionnelle."""
+    landing_path = os.path.join(FRONTEND_DIR, "landing.html")
+    if os.path.exists(landing_path):
+        return FileResponse(landing_path)
+    # Fallback vers index.html si landing.html n'existe pas
     index_path = os.path.join(FRONTEND_DIR, "index.html")
     if os.path.exists(index_path):
         return FileResponse(index_path)
     return HTMLResponse("<h1>SIMONE - Traduction en Temps Réel</h1><p>Frontend non trouvé.</p>")
+
+
+@app.get("/app")
+async def translator_app():
+    """Interface de traduction en temps réel."""
+    index_path = os.path.join(FRONTEND_DIR, "index.html")
+    if os.path.exists(index_path):
+        return FileResponse(index_path)
+    return HTMLResponse("<h1>SIMONE App</h1><p>Interface non trouvée.</p>")
 
 
 @app.get("/health")
